@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: "roboto", sans-serif;
+}
+
+// CONST
+@mixin text($size, $weight) {
+  color: #000;
+  font-family: "roboto";
+  font-size: $size;
+  font-style: normal;
+  font-weight: $weight;
+  line-height: normal;
+}
+
+.navbar {
+
+
+  .navbar__img {
+    // padding: 14px 89px 13px 89px;
+  }
+  .navbar__p {
+    background: var(--Grey-2, #eaeaea);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 17px;
+    @include text(16px, 1500);
+  }
+}
