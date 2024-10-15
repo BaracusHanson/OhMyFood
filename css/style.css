@@ -27,7 +27,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  color: var(--Grey, #353535);
+  color: #000;
   background: var(--Grey-2, #eaeaea);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
@@ -50,7 +50,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  color: var(--Grey, #353535);
+  color: #000;
 }
 .location .location__infos__h2 {
   color: #353535;
@@ -63,7 +63,7 @@
   font-style: normal;
   font-weight: 300;
   line-height: normal;
-  color: var(--Grey, #353535);
+  color: #000;
 }
 .location .location__infos__a {
   text-decoration: none;
@@ -91,7 +91,7 @@
   font-style: normal;
   font-weight: bold;
   line-height: normal;
-  color: var(--Grey, #353535);
+  color: #000;
 }
 .functioning .functioning__container {
   display: flex;
@@ -142,8 +142,155 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  color: var(--Grey, #353535);
   color: #000;
+  color: #000;
+}
+.functioning .functioning__container .functioning__container__link .functioning__container_p:hover {
+  color: #9356dc;
+}
+.functioning .functioning__container .functioning__container__link:hover {
+  background-color: #9356dc;
+}
+
+.restaurant {
+  background: var(--Background, #f6f6f6);
+  padding: 0 18px 50px 18px;
+}
+.restaurant .restaurant__title {
+  padding: 50px 0 18px 0;
+  color: #000;
+  font-family: "Roboto";
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  color: #000;
+}
+.restaurant .restaurant__container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.restaurant .restaurant__card {
+  position: relative;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+}
+.restaurant .restaurant-card__link {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.restaurant .restaurant-card-picture {
+  width: 100%;
+  height: 231px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.restaurant .restaurant-card-picture__img {
+  border-radius: 15px 15px 0 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.restaurant .restaurant-card__new {
+  position: absolute;
+  right: 12px;
+  top: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 29px;
+  border-radius: 2px;
+  background: var(--Green, #99e2d0);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+.restaurant .restaurant-card__new__text {
+  font-family: "Roboto";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #008766;
+}
+.restaurant .restaurant-card__description {
+  padding: 10px 0;
+  width: 100%;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-around;
+  padding-left: 13px;
+}
+.restaurant .restaurant-card__description__title {
+  width: 267px;
+  height: 20px;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  color: #000;
+}
+.restaurant .restaurant-card__description__p {
+  width: 247px;
+  height: 24px;
+  font-family: "Roboto";
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  color: #000;
+}
+.restaurant .heart {
+  position: absolute;
+  right: 25px;
+  bottom: 15px;
+}
+
+.footer {
+  background: var(--Grey, #353535);
+  display: flex;
+  flex-direction: column;
+  padding: 22px 25px;
+  gap: 16px;
+}
+.footer .footer__title {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #fff;
+  font-family: "Shrikhand", cursive;
+}
+.footer .footer__container {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.footer .footer__container__link {
+  text-decoration: none;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #fff;
+}
+.footer .footer__container :nth-child(3) {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */

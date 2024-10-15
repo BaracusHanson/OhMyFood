@@ -10,13 +10,13 @@
 //   width: 100%;
 //   height: 100vh;
 // }
-@mixin font($weight, $size) {
+@mixin font($weight, $size, $color) {
   font-family: "Roboto";
   font-size: $size;
   font-style: normal;
   font-weight: $weight;
   line-height: normal;
-  color: var(--Grey, #353535);
+  color: $color;
 }
 
 .header {
@@ -38,7 +38,7 @@
     align-items: center;
     justify-content: center;
     gap: 17px;
-    @include font(500, 1rem);
+    @include font(500, 1rem, #000);
     background: var(--Grey-2, #eaeaea);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
@@ -57,7 +57,7 @@
     margin: 40px 50px 20px 50px;
     text-align: center;
     width: 275px;
-    @include font(700, 24px);
+    @include font(700, 24px, #000);
   }
   .location__infos__h2 {
     color: #353535;
@@ -65,7 +65,7 @@
     width: 315px;
     height: 46px;
     margin: 0 20px;
-    @include font(300, 18px);
+    @include font(300, 18px, #000);
   }
   .location__infos__a {
     text-decoration: none;
@@ -92,7 +92,7 @@
   padding: 50px 20px;
   .functioning__title {
     margin-bottom: 24px;
-    @include font(bold, 1.5rem);
+    @include font(bold, 1.5rem, #000);
   }
   .functioning__container {
     display: flex;
@@ -138,9 +138,126 @@
         width: 211px;
         height: 16px;
         flex-shrink: 0;
-        @include font(500, 16px);
+        @include font(500, 16px, #000);
         color: #000;
       }
+      .functioning__container_p:hover {
+        color: #9356dc;
+      }
     }
+    .functioning__container__link:hover {
+      background-color: #9356dc;
+    }
+  }
+}
+
+.restaurant {
+  background: var(--Background, #f6f6f6);
+  padding: 0 18px 50px 18px;
+
+  .restaurant__title {
+    padding: 50px 0 18px 0;
+    color: #000;
+    @include font(bold, 1.5rem, #000);
+  }
+  .restaurant__container {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .restaurant__card {
+    position: relative;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  }
+  .restaurant-card__link {
+    // width: 100%;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .restaurant-card-picture {
+    width: 100%;
+    height: 231px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // border: 1px solid red;
+  }
+  .restaurant-card-picture__img {
+    border-radius: 15px 15px 0 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .restaurant-card__new {
+    position: absolute;
+    right: 12px;
+    top: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 29px;
+    border-radius: 2px;
+    background: var(--Green, #99e2d0);
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  }
+  .restaurant-card__new__text {
+    @include font(500, 14px, #008766);
+  }
+  .restaurant-card__description {
+    padding: 10px 0;
+    // border: 1px solid red;
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+    padding-left: 13px;
+  }
+  .restaurant-card__description__title {
+    width: 267px;
+    height: 20px;
+    @include font(700, 18px, #000);
+  }
+  .restaurant-card__description__p {
+    width: 247px;
+    height: 24px;
+    @include font(300, 17px, #000);
+  }
+  .heart {
+    position: absolute;
+    right: 25px;
+    bottom: 15px;
+  }
+}
+
+.footer {
+  background: var(--Grey, #353535);
+  display: flex;
+  flex-direction: column;
+  padding: 22px 25px;
+
+  gap: 16px;
+  .footer__title {
+    @include font(400, 18px, #fff);
+    font-family: "Shrikhand", cursive;
+  }
+  .footer__container {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .footer__container__link {
+    text-decoration: none;
+    @include font(500, 16px, #fff);
+  }
+  .footer__container :nth-child(3){
+    @include font(400, 16px, #fff);
   }
 }
