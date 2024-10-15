@@ -78,6 +78,9 @@
   justify-content: center;
   align-items: center;
 }
+.location .location__infos__a:hover {
+  font-size: 0.9rem;
+}
 
 .functioning {
   background-color: #fff;
@@ -131,11 +134,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
   gap: 22px;
 }
 .functioning .functioning__container .functioning__container__link .functioning__container_p {
   width: 211px;
-  height: 16px;
+  height: 100%;
   flex-shrink: 0;
   font-family: "Roboto";
   font-size: 16px;
@@ -145,11 +149,13 @@
   color: #000;
   color: #000;
 }
-.functioning .functioning__container .functioning__container__link .functioning__container_p:hover {
-  color: #9356dc;
+.functioning .functioning__container .functioning__container__link .functioning__container_p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .functioning .functioning__container .functioning__container__link:hover {
-  background-color: #9356dc;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.371);
 }
 
 .restaurant {
@@ -248,10 +254,38 @@
   line-height: normal;
   color: #000;
 }
+.restaurant .like-checkbox {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 22px;
+  height: 21px;
+  opacity: 0;
+}
+.restaurant #heart__full {
+  opacity: 0;
+}
+.restaurant #like-checkbox1:checked + .heart-label1 #heart__full {
+  opacity: 1;
+}
+.restaurant #like-checkbox2:checked + .heart-label2 #heart__full {
+  opacity: 1;
+}
+.restaurant #like-checkbox3:checked + .heart-label3 #heart__full {
+  opacity: 1;
+}
+.restaurant #like-checkbox4:checked + .heart-label4 #heart__full {
+  opacity: 1;
+}
 .restaurant .heart {
   position: absolute;
   right: 25px;
   bottom: 15px;
+}
+.restaurant .heart .heart__svg {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
 }
 
 .footer {
@@ -285,6 +319,14 @@
   color: #fff;
 }
 .footer .footer__container :nth-child(3) {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #fff;
+}
+.footer .footer__container :nth-child(4) {
   font-family: "Roboto";
   font-size: 16px;
   font-style: normal;

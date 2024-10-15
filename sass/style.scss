@@ -83,6 +83,9 @@
     justify-content: center;
     align-items: center;
   }
+  .location__infos__a:hover {
+    font-size: 0.9rem;
+  }
 }
 
 .functioning {
@@ -132,21 +135,26 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        height: 100%;
         gap: 22px;
       }
+
       .functioning__container_p {
+        // border: 1px solid red;
         width: 211px;
-        height: 16px;
+        height: 100%;
         flex-shrink: 0;
         @include font(500, 16px, #000);
         color: #000;
       }
-      .functioning__container_p:hover {
-        color: #9356dc;
+      .functioning__container_p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
     .functioning__container__link:hover {
-      background-color: #9356dc;
+      box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.371);
     }
   }
 }
@@ -173,6 +181,7 @@
   }
   .restaurant-card__link {
     // width: 100%;
+    // border: 1px solid red;
     text-decoration: none;
     display: flex;
     flex-direction: column;
@@ -230,11 +239,50 @@
     height: 24px;
     @include font(300, 17px, #000);
   }
+  .like-checkbox {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 22px;
+    height: 21px;
+    opacity: 0;
+  }
+  #heart__full {
+    opacity: 0;
+  }
+  #like-checkbox1:checked + .heart-label1 {
+    #heart__full {
+      opacity: 1;
+    }
+  }
+  #like-checkbox2:checked + .heart-label2 {
+    #heart__full {
+      opacity: 1;
+    }
+  }
+  #like-checkbox3:checked + .heart-label3 {
+    #heart__full {
+      opacity: 1;
+    }
+  }
+  #like-checkbox4:checked + .heart-label4 {
+    #heart__full {
+      opacity: 1;
+    }
+  }
   .heart {
     position: absolute;
     right: 25px;
     bottom: 15px;
+ 
+    .heart__svg {
+      position: absolute;
+      right: 0px;
+      bottom: 0px;
+
+    }
   }
+
 }
 
 .footer {
@@ -257,7 +305,10 @@
     text-decoration: none;
     @include font(500, 16px, #fff);
   }
-  .footer__container :nth-child(3){
+  .footer__container :nth-child(3) {
+    @include font(400, 16px, #fff);
+  }
+  .footer__container :nth-child(4) {
     @include font(400, 16px, #fff);
   }
 }
