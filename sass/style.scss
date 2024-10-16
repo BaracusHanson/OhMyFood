@@ -314,8 +314,10 @@
 
 // La palette du goût
 body {
-  height: 100vh;
+  // height: 100vh;
   box-sizing: border-box;
+  // border: 1px solid red;
+  width: 100%;
 }
 .body {
   position: relative;
@@ -386,8 +388,10 @@ body {
   .main__menu__entrees {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 12px;
     width: 100%;
+    // overflow: hidden;
     .main__menu__entrees__title {
       @include font(300, 16px, #000);
       text-transform: uppercase;
@@ -401,20 +405,27 @@ body {
     }
   }
   .main__menu__entrees__card {
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    // border: 1px solid rgb(0, 255, 30);
     border-radius: 15px;
-    background: var(--White, #fff);
-    box-shadow: 0px 4.011px 15px 0px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
+    // overflow: hidden;
+    // width: 100%;
     gap: 5px;
-    padding: 15px;
-    width: 100%;
-
+    height: 69px;
+    box-shadow: 0px 4.011px 15px 0px rgba(0, 0, 0, 0.1);
     .main__menu__entrees__card__content {
+      border-radius: 15px;
+      background: var(--White, #fff);
+      box-shadow: 0px 4.011px 15px 0px rgba(0, 0, 0, 0.1);
+      padding: 15px;
       width: 100%;
+      // overflow: hidden;
+      // border: 1px solid red;
       .main__menu__entrees__card__content__h3 {
         height: 21px;
-        overflow: hidden;
+        // overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
         font-family: "Roboto";
@@ -446,5 +457,143 @@ body {
     );
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
     @include font(500, 16px, #fff);
+  }
+  .order__button:hover {
+    background: var(
+      --Button-Gradient,
+      linear-gradient(193deg, #9256dca1 -11.44%, #ff79d99e 123.93%)
+    );
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.645);
+    @include font(500, 16px, #fff);
+  }
+}
+
+.main__menu__title > .heart {
+  position: relative;
+  height: 22px;
+  width: 22px;
+}
+.heart__svg {
+  position: absolute;
+}
+
+#heart__full {
+  opacity: 0;
+}
+#heart__full:hover {
+  opacity: 1;
+}
+.like-checkbox {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.main__menu__entrees {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .main__menu__entrees__card {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    transform: translateY(50px);
+  }
+
+  @for $i from 1 through 10 {
+    .main__menu__entrees__card:nth-child(#{$i}) {
+      animation-delay: $i * 0.5s;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .location__infos {
+    // border: 1px solid rgb(0, 255, 166);
+  }
+  .location .location__infos__h1,
+  .location .location__infos__h2 {
+    width: 100%;
+  }
+
+  .functioning {
+    display: flex;
+    padding: 50px 180px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    // align-self: stretch;
+  }
+  .functioning .functioning__container {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .functioning__title {
+    // align-items: start;
+    // justify-content: start;
+    // border: 1px solid red;
+    width: calc(100% + 24px);
+  }
+  .restaurant__container {
+    flex-direction: row;
+  }
+  .restaurant .restaurant__container {
+    flex-direction: row;
+    gap: 50px 100px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .restaurant .restaurant__card {
+    width: 490px;
+  }
+  .restaurant__title {
+    // border: 1px solid red;
+    margin-left: 15px;
+  }
+  .restaurant {
+    padding: 0 180px;
+    padding-bottom: 30px;
+  }
+  .footer {
+    flex-direction: row-reverse;
+    padding: 30px 25px;
+    width: 100vw;
+    height: 114px;
+    gap: 16px;
+    // justify-content: center;
+    align-items: center;
+  }
+  .footer .footer__container {
+    flex-direction: row;
+  }
+  .footer .footer__title {
+    display: flex;
+    width: 139px;
+    height: 27px;
+    padding-right: 1.418px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .footer .footer__container {
+    width: calc(50%);
+    justify-content: space-evenly;
+  }
+  .body .main {
+    width: 1055px;
+    margin-left: 50%;
+    transform: translateX(-50%);
   }
 }
