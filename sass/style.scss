@@ -274,15 +274,13 @@
     position: absolute;
     right: 25px;
     bottom: 15px;
- 
+
     .heart__svg {
       position: absolute;
       right: 0px;
       bottom: 0px;
-
     }
   }
-
 }
 
 .footer {
@@ -310,5 +308,140 @@
   }
   .footer__container :nth-child(4) {
     @include font(400, 16px, #fff);
+  }
+}
+
+// La palette du goût
+.body {
+  position: relative;
+// border: 1px solid red;
+  // height: 100hv;
+  // width: 100%;
+  // box-sizing: border-box;
+
+  .palette__header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 42px;
+    height: 63px;
+    width: 100%;
+    background: var(--White, #fff);
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+    .palette__header__a {
+      position: absolute;
+      left: 17px;
+    }
+    .palette__header__img {
+      width: 197px;
+      height: 36px;
+      padding: 0px 19px 0px 16px;
+    }
+  }
+
+  .palette__presentation {
+    // border: 1px solid red;
+    width: 100%;
+    height: 275px;
+
+    .palette__header__img {
+      width: 100%;
+      height: 275px;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+  }
+
+  .main {
+    position: absolute;
+    left: 0;
+    top: 285px;
+    border-radius: 50px 50px 0 0;
+    width: 100%;
+    flex-shrink: 0;
+    background-color: #f6f6f6;
+    padding: 32px 17px 0 17px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .main__menu__title {
+    // border: 1px solid red;
+    width: 341px;
+    height: 27px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .main__menu__title__text {
+    @include font(400, 28px, #101010);
+    font-family: "Shrikhand";
+  }
+
+  .main__menu__entrees {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    .main__menu__entrees__title {
+      @include font(300, 16px, #000);
+      text-transform: uppercase;
+      font-family: "Roboto";
+    }
+    .main__menu__entrees__title__hr {
+      width: 40px;
+      height: 3px;
+      background-color: #99e2d0;
+      border: none;
+    }
+  }
+  .main__menu__entrees__card {
+    border-radius: 15px;
+    background: var(--White, #fff);
+    box-shadow: 0px 4.011px 15px 0px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    padding: 15px;
+    width: 100%;
+
+    .main__menu__entrees__card__content {
+      width: 100%;
+      .main__menu__entrees__card__content__h3 {
+        height: 21px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-family: "Roboto";
+        @include font(500, 18px, #000);
+      }
+      .main__menu__entrees__card__content__p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-family: "Roboto";
+        @include font(300, 15px, #000);
+        display: flex;
+        justify-content: space-between;
+        gap: 5px;
+        .main__menu__entrees__card__content__price {
+          @include font(700, 15px, #353535);
+        }
+      }
+    }
+  }
+  .order__button {
+    width: 186px;
+    height: 50px;
+    border: none;
+    border-radius: 25px;
+    background: var(
+      --Button-Gradient,
+      linear-gradient(193deg, #9356dc -11.44%, #ff79da 123.93%)
+    );
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    @include font(500, 16px, #fff);
   }
 }
