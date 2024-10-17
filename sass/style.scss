@@ -276,7 +276,8 @@
   display: flex;
   flex-direction: column;
   padding: 22px 25px;
-  width: 100%;
+  width: 100vw;
+  box-sizing: border-box;
   bottom: 0;
   gap: 16px;
   .footer__title {
@@ -394,13 +395,14 @@ body {
     border-radius: 15px 0 0 15px;
     width: 100%;
     gap: 5px;
-    height: 69px;
-
+    height: 100%;
     .main__menu__entrees__card__content {
       border-radius: 15px 0 0 15px;
       background: var(--White, #fff);
       box-shadow: 0px 4.011px 15px 0px rgba(0, 0, 0, 0.1);
       padding: 15px;
+      // border: 1px solid red;
+      height: 100%;
       width: 100%;
 
       .main__menu__entrees__card__content__h3 {
@@ -468,32 +470,32 @@ body {
 }
 
 @keyframes fadeIn {
-  from {
+  0% {
     opacity: 0;
-    transform: translateX(50px);
+    transform: translateY(40px);
   }
-  to {
+  100% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 
-.main__menu__entrees {
-  display: flex;
-  flex-direction: column;
-
-  .main__menu__entrees__card {
-    opacity: 0;
-    animation: fadeIn 0.5s ease forwards;
-    transform: translateY(50px);
-  }
-
-  @for $i from 1 through 10 {
-    .main__menu__entrees__card:nth-child(#{$i}) {
-      animation-delay: $i * 0.3s;
-    }
-  }
+.validDiv {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+  margin-bottom: 20px;
 }
+.validDiv:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.validDiv:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.validDiv:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
 
 @media screen and (min-width: 1024px) {
   .location .location__infos__h1,
@@ -538,12 +540,17 @@ body {
     padding-bottom: 30px;
   }
   .footer {
-    flex-direction: row-reverse;
-    padding: 30px 25px;
-    // width: 100vw;
+    width: 100vw;
     height: 114px;
-    gap: 16px;
-    align-items: center;
+
+    #footer__container {
+      display: flex;
+      box-sizing: border-box;
+      flex-direction: row-reverse;
+      padding: 30px 25px;
+      gap: 16px;
+      align-items: center;
+    }
   }
   .footer .footer__container {
     flex-direction: row;
@@ -582,6 +589,7 @@ body {
 #validDiv {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   overflow: hidden;
   border-radius: 15px;
   #imageValid {
@@ -610,16 +618,38 @@ body {
       width: 59px;
     }
   }
-  #ellisis,
-  .main__menu__entrees__card__content__h3 {
-    width: 220px;
-    white-space: nowrap;
+
+}
+@media screen and (max-width: 1024px){
+  #validDiv:hover {
+    display: flex;
+    justify-content: space-between;
     overflow: hidden;
-    text-overflow: ellipsis;
+    #imageValid {
+      height: 69px;
+      width: 59px;
+      display: block;
+      animation: increaseWidth 0.5s ease;
+    }
+    @keyframes increaseWidth {
+      from {
+        opacity: 0;
+        width: 0px;
+      }
+      to {
+        opacity: 1;
+        width: 59px;
+      }
+    }
+    #ellisis,
+    .main__menu__entrees__card__content__h3 {
+      width: 190px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 }
-
-
 
 // LOADER
 #loader {
@@ -633,7 +663,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 9999; 
+  z-index: 9999;
 }
 
 .spinner {
@@ -646,15 +676,17 @@ body {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 #pageContent {
   visibility: hidden;
-  
 }
-
 
 @keyframes fadeIn {
   0% {
@@ -667,17 +699,15 @@ body {
 }
 
 #pageContent {
-  animation: fadeIn 3s forwards; 
+  animation: fadeIn 3s forwards;
 }
 
 @keyframes hideLoader {
   0% {
-    // visibility: visible;
     display: flex;
   }
   100% {
-    // opacity: 0;
-    // visibility: hidden;
+
     display: none;
   }
 }
