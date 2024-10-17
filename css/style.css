@@ -445,8 +445,9 @@ body {
 }
 .body .main__menu__entrees__card .main__menu__entrees__card__content .main__menu__entrees__card__content__h3 {
   height: 21px;
-  text-overflow: ellipsis;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-family: "Roboto";
   font-family: "Roboto";
   font-size: 18px;
@@ -645,6 +646,17 @@ body {
     margin-left: 50%;
     transform: translateX(-50%);
   }
+  #validDiv:hover {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+  #validDiv:hover #imageValid {
+    height: 69px;
+    width: 59px;
+    display: block;
+    animation: increaseWidth 0.5s ease;
+  }
 }
 #validDiv {
   display: flex;
@@ -678,6 +690,13 @@ body {
     opacity: 1;
     width: 59px;
   }
+}
+#validDiv:hover #ellisis,
+#validDiv:hover .main__menu__entrees__card__content__h3 {
+  width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /*# sourceMappingURL=style.css.map */

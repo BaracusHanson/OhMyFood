@@ -404,8 +404,9 @@ body {
 
       .main__menu__entrees__card__content__h3 {
         height: 21px;
-        text-overflow: ellipsis;
         white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         font-family: "Roboto";
         @include font(500, 18px, #000);
       }
@@ -494,9 +495,6 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
-  .location__infos {
-    // border: 1px solid rgb(0, 255, 166);
-  }
   .location .location__infos__h1,
   .location .location__infos__h2 {
     width: 100%;
@@ -567,6 +565,17 @@ body {
     margin-left: 50%;
     transform: translateX(-50%);
   }
+  #validDiv:hover {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    #imageValid {
+      height: 69px;
+      width: 59px;
+      display: block;
+      animation: increaseWidth 0.5s ease;
+    }
+  }
 }
 
 #validDiv {
@@ -599,5 +608,12 @@ body {
       opacity: 1;
       width: 59px;
     }
+  }
+  #ellisis,
+  .main__menu__entrees__card__content__h3 {
+    width: 220px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
