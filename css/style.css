@@ -291,7 +291,8 @@
 .footer {
   background: var(--Grey, #353535);
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
+  align-items: center;
   padding: 22px 25px;
   width: 100vw;
   box-sizing: border-box;
@@ -309,7 +310,7 @@
 }
 .footer .footer__container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 7px;
 }
 .footer .footer__container__link {
