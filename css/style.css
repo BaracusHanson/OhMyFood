@@ -293,7 +293,7 @@
   display: flex;
   flex-direction: column;
   padding: 22px 25px;
-  width: 110%;
+  width: 100%;
   bottom: 0;
   gap: 16px;
 }
@@ -338,6 +338,7 @@
 }
 
 body {
+  height: 100vh;
   box-sizing: border-box;
   width: 100%;
 }
@@ -620,7 +621,6 @@ body {
   .footer {
     flex-direction: row-reverse;
     padding: 30px 25px;
-    width: 100vw;
     height: 114px;
     gap: 16px;
     align-items: center;
@@ -697,6 +697,66 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #008766;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#pageContent {
+  visibility: hidden;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+#pageContent {
+  animation: fadeIn 3s forwards;
+}
+
+@keyframes hideLoader {
+  0% {
+    display: flex;
+  }
+  100% {
+    display: none;
+  }
+}
+#loader {
+  animation: hideLoader 3s forwards;
 }
 
 /*# sourceMappingURL=style.css.map */
