@@ -497,7 +497,6 @@ body {
   animation-delay: 0.6s;
 }
 
-
 @media screen and (min-width: 1024px) {
   .location .location__infos__h1,
   .location .location__infos__h2 {
@@ -619,9 +618,8 @@ body {
       width: 59px;
     }
   }
-
 }
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
   #validDiv:hover {
     display: flex;
     justify-content: space-between;
@@ -708,11 +706,22 @@ body {
     display: flex;
   }
   100% {
-
     display: none;
   }
 }
 
 #loader {
   animation: hideLoader 3s forwards;
+}
+
+.heart__svg {
+  cursor: pointer;
+}
+
+.main__menu__entrees__card__content{
+  cursor: pointer;
+}
+.order__button{
+  cursor: pointer;
+  text-transform: capitalize;
 }

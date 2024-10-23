@@ -769,4 +769,17 @@ body {
   animation: hideLoader 3s forwards;
 }
 
+.heart__svg {
+  cursor: pointer;
+}
+
+.main__menu__entrees__card__content {
+  cursor: pointer;
+}
+
+.order__button {
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
 /*# sourceMappingURL=style.css.map */
