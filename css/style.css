@@ -265,7 +265,7 @@
   opacity: 0;
 }
 
-#heart__full {
+#heart__full1, #heart__full2, #heart__full3, #heart__full4 {
   opacity: 0;
 }
 
@@ -289,36 +289,20 @@
     scale: 0;
   }
 }
-#like-checkbox1:checked + .heart-label1 #heart__full {
+#heart__full1:hover {
   animation: heartAnim 0.3s ease forwards;
 }
 
-#like-checkbox1:not(:checked) + .heart-label1 #heart__full {
-  animation: heartAnimDislike 0.4s ease forwards;
-}
-
-#like-checkbox2:checked + .heart-label2 #heart__full {
+#heart__full2:hover {
   animation: heartAnim 0.3s ease forwards;
 }
 
-#like-checkbox3:checked + .heart-label3 #heart__full {
+#heart__full3:hover {
   animation: heartAnim 0.3s ease forwards;
 }
 
-#like-checkbox4:checked + .heart-label4 #heart__full {
+#heart__full4:hover {
   animation: heartAnim 0.3s ease forwards;
-}
-
-#like-checkbox2:not(:checked) + .heart-label2 #heart__full {
-  animation: heartAnimDislike 0.4s ease forwards;
-}
-
-#like-checkbox3:not(:checked) + .heart-label3 #heart__full {
-  animation: heartAnimDislike 0.4s ease forwards;
-}
-
-#like-checkbox4:not(:checked) + .heart-label4 #heart__full {
-  animation: heartAnimDislike 0.4s ease forwards;
 }
 
 .footer {
@@ -693,37 +677,37 @@
     margin-left: 50%;
     transform: translateX(-50%);
   }
-  #validDiv:hover {
+  .validDiv:hover {
     display: flex;
     justify-content: space-between;
     overflow: hidden;
   }
-  #validDiv:hover #imageValid {
+  .validDiv:hover .imageValid {
     height: 69px;
     width: 59px;
     display: block;
     animation: increaseWidth 0.5s ease;
   }
 }
-#validDiv {
+.validDiv {
   display: flex;
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
   border-radius: 15px;
 }
-#validDiv #imageValid {
+.validDiv .imageValid {
   height: 69px;
   width: 0px;
   display: none;
 }
 
-#validDiv:hover {
+.validDiv:hover {
   display: flex;
   justify-content: space-between;
   overflow: hidden;
 }
-#validDiv:hover #imageValid {
+.validDiv:hover .imageValid {
   height: 69px;
   width: 59px;
   display: block;
@@ -741,12 +725,12 @@
 }
 
 @media screen and (max-width: 1024px) {
-  #validDiv:hover {
+  .validDiv:hover {
     display: flex;
     justify-content: space-between;
     overflow: hidden;
   }
-  #validDiv:hover #imageValid {
+  .validDiv:hover .imageValid {
     height: 69px;
     width: 59px;
     display: block;
@@ -762,8 +746,8 @@
       width: 59px;
     }
   }
-  #validDiv:hover #ellisis,
-  #validDiv:hover .main__menu__entrees__card__content__h3 {
+  .validDiv:hover .ellisis,
+  .validDiv:hover .main__menu__entrees__card__content__h3 {
     width: 190px;
     white-space: nowrap;
     overflow: hidden;
