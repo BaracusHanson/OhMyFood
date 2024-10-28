@@ -233,6 +233,7 @@
   align-items: start;
   justify-content: space-around;
   padding-left: 13px;
+  padding-right: 13px;
 }
 .restaurant .restaurant-card__description__title {
   width: 267px;
@@ -245,7 +246,7 @@
   color: #000;
 }
 .restaurant .restaurant-card__description__p {
-  width: 247px;
+  width: 100%;
   height: 24px;
   font-family: "Roboto";
   font-size: 17px;
@@ -254,7 +255,8 @@
   line-height: normal;
   color: #000;
 }
-.restaurant .like-checkbox {
+
+.like-checkbox {
   position: absolute;
   right: 0px;
   bottom: 0px;
@@ -262,39 +264,69 @@
   height: 21px;
   opacity: 0;
 }
-.restaurant #heart__full {
+
+#heart__full {
   opacity: 0;
 }
-.restaurant #like-checkbox1:checked + .heart-label1 #heart__full {
-  opacity: 1;
+
+@keyframes heartAnim {
+  from {
+    opacity: 0;
+    scale: 0;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
 }
-.restaurant #like-checkbox2:checked + .heart-label2 #heart__full {
-  opacity: 1;
+@keyframes heartAnimDislike {
+  from {
+    opacity: 1;
+    scale: 1;
+  }
+  to {
+    opacity: 0;
+    scale: 0;
+  }
 }
-.restaurant #like-checkbox3:checked + .heart-label3 #heart__full {
-  opacity: 1;
+#like-checkbox1:checked + .heart-label1 #heart__full {
+  animation: heartAnim 0.3s ease forwards;
 }
-.restaurant #like-checkbox4:checked + .heart-label4 #heart__full {
-  opacity: 1;
+
+#like-checkbox1:not(:checked) + .heart-label1 #heart__full {
+  animation: heartAnimDislike 0.4s ease forwards;
 }
-.restaurant .heart {
-  position: absolute;
-  right: 25px;
-  bottom: 15px;
+
+#like-checkbox2:checked + .heart-label2 #heart__full {
+  animation: heartAnim 0.3s ease forwards;
 }
-.restaurant .heart .heart__svg {
-  position: absolute;
-  right: 0px;
-  bottom: 0px;
+
+#like-checkbox3:checked + .heart-label3 #heart__full {
+  animation: heartAnim 0.3s ease forwards;
+}
+
+#like-checkbox4:checked + .heart-label4 #heart__full {
+  animation: heartAnim 0.3s ease forwards;
+}
+
+#like-checkbox2:not(:checked) + .heart-label2 #heart__full {
+  animation: heartAnimDislike 0.4s ease forwards;
+}
+
+#like-checkbox3:not(:checked) + .heart-label3 #heart__full {
+  animation: heartAnimDislike 0.4s ease forwards;
+}
+
+#like-checkbox4:not(:checked) + .heart-label4 #heart__full {
+  animation: heartAnimDislike 0.4s ease forwards;
 }
 
 .footer {
   background: var(--Grey, #353535);
   display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
+  flex-direction: column;
+  align-items: start;
   padding: 22px 25px;
-  width: 100vw;
   box-sizing: border-box;
   bottom: 0;
   gap: 16px;
@@ -310,7 +342,7 @@
 }
 .footer .footer__container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 7px;
 }
 .footer .footer__container__link {
@@ -339,16 +371,6 @@
   color: #fff;
 }
 
-body {
-  height: 100vh;
-  box-sizing: border-box;
-  width: 100%;
-}
-
-.body {
-  position: relative;
-  height: 100%;
-}
 .body .palette__header {
   position: relative;
   display: flex;
@@ -371,7 +393,7 @@ body {
 }
 .body .palette__presentation {
   width: 100%;
-  height: 275px;
+  height: 225px;
 }
 .body .palette__presentation .palette__header__img {
   width: 100%;
@@ -380,25 +402,23 @@ body {
   object-fit: cover;
 }
 .body .main {
-  position: absolute;
-  left: 0;
-  top: 285px;
   border-radius: 50px 50px 0 0;
   width: 100%;
-  flex-shrink: 0;
   background-color: #f6f6f6;
   padding: 32px 17px 0 17px;
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 40px;
+  position: relative;
 }
 .body .main__menu__title {
-  width: 341px;
-  height: 27px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  padding: 0 13px 0 0;
 }
 .body .main__menu__title__text {
   font-family: "Roboto";
@@ -488,6 +508,7 @@ body {
   height: 50px;
   border: none;
   border-radius: 25px;
+  margin-bottom: 50px;
   background: var(--Button-Gradient, linear-gradient(193deg, #9356dc -11.44%, #ff79da 123.93%));
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
   font-family: "Roboto";
@@ -514,16 +535,8 @@ body {
   width: 22px;
 }
 
-.heart__svg {
-  position: absolute;
-}
-
 #heart__full {
   opacity: 0;
-}
-
-#heart__full:hover {
-  opacity: 1;
 }
 
 .like-checkbox {
@@ -558,10 +571,58 @@ body {
   animation-delay: 0.6s;
 }
 
+.restaurant-card__description__p {
+  display: flex;
+  justify-content: space-between;
+}
+
+.heart {
+  width: 21px;
+  height: 22px;
+  position: relative;
+}
+
+.heart__svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 @media screen and (min-width: 1024px) {
+  .body .main__menu__title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    align-items: center;
+    padding: 0 13px 0 0;
+  }
   .location .location__infos__h1,
   .location .location__infos__h2 {
     width: 100%;
+  }
+  .heart .heart__svg {
+    cursor: pointer;
+    position: absolute;
+  }
+  .footer {
+    background: var(--Grey, #353535);
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 22px 25px;
+    box-sizing: border-box;
+    bottom: 0;
+    gap: 16px;
+  }
+  .main__menu__title__text {
+    font-family: "Roboto";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #101010;
+    font-family: "Shrikhand";
   }
   .functioning {
     display: flex;
@@ -600,7 +661,7 @@ body {
     padding-bottom: 30px;
   }
   .footer {
-    width: 100vw;
+    width: 100%;
     height: 114px;
   }
   .footer #footer__container {

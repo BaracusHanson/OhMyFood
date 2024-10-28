@@ -132,7 +132,6 @@
       }
 
       .functioning__container_p {
-        // border: 1px solid red;
         width: 211px;
         height: 100%;
         flex-shrink: 0;
@@ -216,6 +215,7 @@
     align-items: start;
     justify-content: space-around;
     padding-left: 13px;
+    padding-right: 13px;
   }
   .restaurant-card__description__title {
     width: 267px;
@@ -223,61 +223,90 @@
     @include font(700, 18px, #000);
   }
   .restaurant-card__description__p {
-    width: 247px;
+    width: 100%;
     height: 24px;
     @include font(300, 17px, #000);
   }
-  .like-checkbox {
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
-    width: 22px;
-    height: 21px;
+}
+.like-checkbox {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 22px;
+  height: 21px;
+  opacity: 0;
+}
+#heart__full {
+  opacity: 0;
+}
+@keyframes heartAnim {
+  from {
     opacity: 0;
+    scale: 0;
   }
-  #heart__full {
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+@keyframes heartAnimDislike {
+  from {
+    opacity: 1;
+    scale: 1;
+  }
+  to {
     opacity: 0;
+    scale: 0;
   }
-  #like-checkbox1:checked + .heart-label1 {
-    #heart__full {
-      opacity: 1;
-    }
-  }
-  #like-checkbox2:checked + .heart-label2 {
-    #heart__full {
-      opacity: 1;
-    }
-  }
-  #like-checkbox3:checked + .heart-label3 {
-    #heart__full {
-      opacity: 1;
-    }
-  }
-  #like-checkbox4:checked + .heart-label4 {
-    #heart__full {
-      opacity: 1;
-    }
-  }
-  .heart {
-    position: absolute;
-    right: 25px;
-    bottom: 15px;
+}
 
-    .heart__svg {
-      position: absolute;
-      right: 0px;
-      bottom: 0px;
-    }
+#like-checkbox1:checked + .heart-label1 {
+  #heart__full {
+    animation: heartAnim 0.3s ease forwards;
+  }
+}
+#like-checkbox1:not(:checked) + .heart-label1 {
+  #heart__full {
+    animation: heartAnimDislike 0.4s ease forwards;
+  }
+}
+#like-checkbox2:checked + .heart-label2 {
+  #heart__full {
+    animation: heartAnim 0.3s ease forwards;
+  }
+}
+#like-checkbox3:checked + .heart-label3 {
+  #heart__full {
+    animation: heartAnim 0.3s ease forwards;
+  }
+}
+#like-checkbox4:checked + .heart-label4 {
+  #heart__full {
+    animation: heartAnim 0.3s ease forwards;
+  }
+}
+#like-checkbox2:not(:checked) + .heart-label2 {
+  #heart__full {
+    animation: heartAnimDislike 0.4s ease forwards;
+  }
+}
+#like-checkbox3:not(:checked) + .heart-label3 {
+  #heart__full {
+    animation: heartAnimDislike 0.4s ease forwards;
+  }
+}
+#like-checkbox4:not(:checked) + .heart-label4 {
+  #heart__full {
+    animation: heartAnimDislike 0.4s ease forwards;
   }
 }
 
 .footer {
   background: var(--Grey, #353535);
   display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
+  flex-direction: column;
+  align-items: start;
   padding: 22px 25px;
-  width: 100vw;
   box-sizing: border-box;
   bottom: 0;
   gap: 16px;
@@ -287,7 +316,7 @@
   }
   .footer__container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 7px;
   }
   .footer__container__link {
@@ -302,15 +331,8 @@
   }
 }
 
-body {
-  height: 100vh;
-  box-sizing: border-box;
-  width: 100%;
-}
 .body {
-  position: relative;
-
-  height: 100%;
+ 
 
   .palette__header {
     position: relative;
@@ -335,7 +357,7 @@ body {
 
   .palette__presentation {
     width: 100%;
-    height: 275px;
+    height: 225px;
 
     .palette__header__img {
       width: 100%;
@@ -346,26 +368,24 @@ body {
   }
 
   .main {
-    position: absolute;
-    left: 0;
-    top: 285px;
     border-radius: 50px 50px 0 0;
     width: 100%;
-    flex-shrink: 0;
     background-color: #f6f6f6;
     padding: 32px 17px 0 17px;
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 40px;
+    position: relative;
   }
 
   .main__menu__title {
-    width: 341px;
-    height: 27px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    padding: 0 13px 0 0;
   }
   .main__menu__title__text {
     @include font(400, 28px, #101010);
@@ -402,7 +422,6 @@ body {
       background: var(--White, #fff);
       box-shadow: 0px 4.011px 15px 0px rgba(0, 0, 0, 0.1);
       padding: 15px;
-      // border: 1px solid red;
       height: 100%;
       width: 100%;
 
@@ -434,6 +453,7 @@ body {
     height: 50px;
     border: none;
     border-radius: 25px;
+    margin-bottom: 50px;
     background: var(
       --Button-Gradient,
       linear-gradient(193deg, #9356dc -11.44%, #ff79da 123.93%)
@@ -456,16 +476,11 @@ body {
   height: 22px;
   width: 22px;
 }
-.heart__svg {
-  position: absolute;
-}
 
 #heart__full {
   opacity: 0;
 }
-#heart__full:hover {
-  opacity: 1;
-}
+
 .like-checkbox {
   display: none;
 }
@@ -497,10 +512,59 @@ body {
   animation-delay: 0.6s;
 }
 
+@media screen and (max-width: 1024px) {
+
+}
+.restaurant-card__description__p {
+  display: flex;
+  justify-content: space-between;
+}
+.heart {
+  
+  width: 21px;
+  height: 22px;
+  position: relative;
+}
+.heart__svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+// tab/ desktop
+
 @media screen and (min-width: 1024px) {
+  .body .main__menu__title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    align-items: center;
+    padding: 0 13px 0 0;
+  }
   .location .location__infos__h1,
   .location .location__infos__h2 {
     width: 100%;
+  }
+  .heart .heart__svg {
+    cursor: pointer;
+    position: absolute;
+  }
+  .footer {
+    background: var(--Grey, #353535);
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 22px 25px;
+    box-sizing: border-box;
+    bottom: 0;
+    gap: 16px;
+  }
+
+  .main__menu__title__text {
+    @include font(400, 28px, #101010);
+    font-family: "Shrikhand";
+   
   }
 
   .functioning {
@@ -540,7 +604,7 @@ body {
     padding-bottom: 30px;
   }
   .footer {
-    width: 100vw;
+    width: 100%;
     height: 114px;
 
     #footer__container {
@@ -718,10 +782,10 @@ body {
   cursor: pointer;
 }
 
-.main__menu__entrees__card__content{
+.main__menu__entrees__card__content {
   cursor: pointer;
 }
-.order__button{
+.order__button {
   cursor: pointer;
   text-transform: capitalize;
 }
