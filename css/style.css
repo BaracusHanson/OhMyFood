@@ -280,27 +280,25 @@
 @keyframes heartAnim {
   from {
     opacity: 0;
-    scale: 0;
   }
   to {
     opacity: 1;
-    scale: 1;
   }
 }
 #heart__full1:hover {
-  animation: heartAnim 0.3s ease forwards;
+  animation: heartAnim 1s ease forwards;
 }
 
 #heart__full2:hover {
-  animation: heartAnim 0.3s ease forwards;
+  animation: heartAnim 1s ease forwards;
 }
 
 #heart__full3:hover {
-  animation: heartAnim 0.3s ease forwards;
+  animation: heartAnim 1s ease forwards;
 }
 
 #heart__full4:hover {
-  animation: heartAnim 0.3s ease forwards;
+  animation: heartAnim 1s ease forwards;
 }
 
 .footer {
