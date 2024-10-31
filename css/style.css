@@ -275,30 +275,33 @@
   opacity: 0;
   width: 22px;
   height: 21px;
+  transform: scale(1);
 }
 
 @keyframes heartAnim {
   from {
     opacity: 0;
+    transform: scale(0);
   }
   to {
     opacity: 1;
+    transform: scale(1);
   }
 }
 #heart__full1:hover {
-  animation: heartAnim 1s ease forwards;
+  animation: heartAnim 0.3s ease forwards;
 }
 
 #heart__full2:hover {
-  animation: heartAnim 1s ease forwards;
+  animation: heartAnim 0.3s ease forwards;
 }
 
 #heart__full3:hover {
-  animation: heartAnim 1s ease forwards;
+  animation: heartAnim 0.3s ease forwards;
 }
 
 #heart__full4:hover {
-  animation: heartAnim 1s ease forwards;
+  animation: heartAnim 0.3s ease forwards;
 }
 
 .footer {
